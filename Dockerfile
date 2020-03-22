@@ -33,4 +33,5 @@ CMD ["node_modules/.bin/pm2-runtime", "ecosystem.config.js"]
 
 COPY package.json package-lock.json next.config.js ecosystem.config.js server.js ./
 COPY --from=builder /srv/www/.next ./.next
+COPY --from=builder /srv/www/public ./public
 COPY --from=builder /srv/www/node_modules ./node_modules
